@@ -73,6 +73,7 @@ class AreaController extends Controller
                     'branch_id' => $branch->id,
                     'id' => $request->id,
                     'name' => $request->name,
+                    'type' => 'KANWIL',
                     'user_id' => auth()->id()
                 ]);
 
@@ -118,7 +119,6 @@ class AreaController extends Controller
                 'id' => $request->id,
                 'code' => $request->initial_id,
                 'name' => $request->name,
-                'user_id' => auth()->id()
             ]);
 
             Branch::query()->where('id', $area->id)

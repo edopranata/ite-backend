@@ -19,13 +19,13 @@ Route::group(['prefix' => 'masterData', 'as' => 'masterData.'], function () {
         Route::get('/', [BranchController::class, 'index'])->name('index')->middleware('permission:app.masterData.branchOffice.index');
         Route::post('/', [BranchController::class, 'store'])->name('createBranch')->middleware('permission:app.masterData.branchOffice.createBranch');
         Route::patch('/{branch}', [BranchController::class, 'update'])->name('updateBranch')->middleware('permission:app.masterData.branchOffice.updateBranch');
-        Route::delete('/{branch}', [BranchController::class, 'destroy'])->name('deleteBranch')->middleware('permission:app.masterData.cctv.deleteBranch');
+        Route::delete('/{branch}', [BranchController::class, 'destroy'])->name('deleteBranch')->middleware('permission:app.masterData.branchOffice.deleteBranch');
     });
-    Route::group(['prefix' => 'subBranch', 'as' => 'subBranch.'], function () {
-        Route::get('/', [UnitController::class, 'index'])->name('index')->middleware('permission:app.masterData.subBranch.index');
-        Route::post('/', [UnitController::class, 'store'])->name('createSubBranch')->middleware('permission:app.masterData.subBranch.createSubBranch');
-        Route::patch('/{unit}', [UnitController::class, 'update'])->name('updateSubBranch')->middleware('permission:app.masterData.subBranch.updateSubBranch');
-        Route::delete('/{unit}', [UnitController::class, 'destroy'])->name('deleteSubBranch')->middleware('permission:app.masterData.subBranch.deleteSubBranch');
+    Route::group(['prefix' => 'subBranchOffice', 'as' => 'subBranchOffice.'], function () {
+        Route::get('/', [UnitController::class, 'index'])->name('index')->middleware('permission:app.masterData.subBranchOffice.index');
+        Route::post('/', [UnitController::class, 'store'])->name('createSubBranch')->middleware('permission:app.masterData.subBranchOffice.createSubBranch');
+        Route::patch('/{unit}', [UnitController::class, 'update'])->name('updateSubBranch')->middleware('permission:app.masterData.subBranchOffice.updateSubBranch');
+        Route::delete('/{unit}', [UnitController::class, 'destroy'])->name('deleteSubBranch')->middleware('permission:app.masterData.subBranchOffice.deleteSubBranch');
     });
 
     Route::group(['prefix' => 'ups', 'as' => 'ups.'], function () {
