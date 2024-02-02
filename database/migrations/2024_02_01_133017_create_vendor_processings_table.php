@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('vendor_processings', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
 
-            $table->foreignIdFor(\App\Models\Office\Area::class)->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(\App\Models\Vendor\Vendor::class)->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(\App\Models\Vendor\VendorBranch::class)->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
             $table->string('name');
             $table->softDeletes();
             $table->timestamps();
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('vendor_processings');
     }
 };

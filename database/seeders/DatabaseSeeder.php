@@ -87,7 +87,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             MenuSeeder::class,
             RoleSeeder::class,
-            UnitSeeder::class
+            UnitSeeder::class,
+            AtmChannelSeeder::class,
+            CrmChannelSeeder::class,
         ]);
     }
 }

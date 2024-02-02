@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('atms', function (Blueprint $table) {
+        Schema::create('vendors', function (Blueprint $table) {
             $table->id();
+            $table->foreignIdFor(\App\Models\User::class)->nullable()->constrained()->nullOnDelete()->cascadeOnUpdate();
+            $table->string('name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('atms');
+        Schema::dropIfExists('vendors');
     }
 };

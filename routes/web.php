@@ -20,8 +20,8 @@ Route::get('/', function () {
 });
 Route::get('tos', function (\Illuminate\Http\Request $request) {
 //    dd(storage_path('master' . DIRECTORY_SEPARATOR .'area.xlsx'));
-//    Excel::import(new \App\Imports\BranchUnitImport(), public_path('master' . DIRECTORY_SEPARATOR .'units.xlsx'));
+    Excel::import(new \App\Imports\ChannelAtmImport(), public_path('master' . DIRECTORY_SEPARATOR .'atm.xlsx'));
 
-    return new \App\Http\Resources\MasterData\RegionalOffice\RegionalCollection(\App\Models\Office\Area::paginate());
+//    return new \App\Http\Resources\MasterData\RegionalOffice\RegionalCollection(\App\Models\Office\Area::paginate());
 });
 

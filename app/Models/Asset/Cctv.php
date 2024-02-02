@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\MasterData;
+namespace App\Models\Asset;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Atm extends Model
+class Cctv extends Model
 {
     use HasFactory;
 }
